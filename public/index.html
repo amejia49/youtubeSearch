@@ -1,0 +1,28 @@
+<html>
+	<head>
+		<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.3.14/angular.min.js"></script>
+		<script src ="index.js"> </script>
+	</head>
+	<body ng-app="youTubeApp">
+		<div ng-controller="HomeController">
+		<h1> Mini-Youtube Search</h1>
+			<form>
+				<input type="text" ng-model="nameOfVideo"/>
+				<input type="button" ng-click="searchForVideo(nameOfVideo)" value="Search"/>
+			</form>
+			  <div ng-repeat="result in results"> 
+			  	<h3> Channel Title </h3>
+			  		<p> {{result.snippet.channelTitle}} </p>
+		  		<h3> Video Name </h3>
+		  			<p> {{result.snippet.title}}</p>
+	  			<h3> Video Description </h3>
+	  				<p> {{result.snippet.description}}</p>
+	  				<img ng-src="{{result.snippet.thumbnails.default.url}}" alt="Mountain View" style="width:304px;height:228px;">
+
+			  </div>
+
+        	
+        </div>
+
+	</body>
+</html>
